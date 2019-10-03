@@ -1,0 +1,4 @@
+code,sortOrder,actionType,navigationType,complexity,requiredAction,description_en,description_sl,path,displayFilter
+achfPatientList,2,USER,VIEW,LOW,S21PatientListForm,Patient list,Seznam pacientov,patient-list,
+achfAddNewPatient,1,USER,ACTION,HIGH,S15AddNewPatientForm,New patient,Nov pacient,new-patient,
+achfPatientRecord,1,PATIENT,VIEW,LOW,S29PatientRecord,Patient record,Zdravstveni karton,patient-record

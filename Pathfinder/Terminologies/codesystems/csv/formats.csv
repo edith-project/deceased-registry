@@ -1,0 +1,6 @@
+code,description_en_web,description_en_ios,description_sl_web,description_sl_ios,comment
+integer,#,%.0f,#,%.0f,Integer numbers
+decimal,#.00,%.2f,#.00,%.2f,Decimal number with two decimal positions
+string,%@,%@,%@,%@,String
+date,TBD,TBD,TBD,TBD,Date
+boolean,%hhd,%hhd,%hhd,%hhd,Boolean

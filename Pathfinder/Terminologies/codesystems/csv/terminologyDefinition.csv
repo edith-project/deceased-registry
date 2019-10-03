@@ -1,0 +1,9 @@
+"code","area","codeSystem","description_en","description_sl","role","lastUpdate","valid","treeHierarchy","validFrom","validTo","terminologyCode","mandatory","description","name","displayedOnList","type","translatable"
+"1","PROJECT","initial","Initial","Inicialna","admin","2018-05-28T09:22:47.948Z","true","false",,,,,,,,,
+"2",,,,,"admin","2018-09-19T08:56:56.351Z","true",,,,"2","true","Code","code","true","string",
+"3",,,,,"admin","2018-09-19T08:56:56.351Z","true",,,,"2","true","Description","description","true","string","true"
+"4",,,,,"user","2018-09-20T07:07:23.217Z","true",,,,"2","false","Complexity","complexity","true","string",
+"5",,,,,"admin","2018-09-20T07:08:22.192Z","true",,,,"1","true","Code","code","true","string",
+"6",,,,,"admin","2018-09-20T07:08:22.192Z","true",,,,"1","true","Description","description","true","string","true"
+"7",,,,,"admin","2018-09-20T07:21:41.007Z",,,,,"3","true","Code","code","true","string",
+"8",,,,,"admin","2018-09-20T07:21:41.007Z",,,,,"3","true","Description","description","true","string","true"
