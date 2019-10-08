@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="edith_follow_up_report">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="context">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="transplantation_id" minOccurs="0" type="xs:string" />
+                <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+                <xs:element name="setting" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="openehr::225::home" />
+                      <xs:enumeration value="openehr::227::emergency care" />
+                      <xs:enumeration value="openehr::228::primary medical care" />
+                      <xs:enumeration value="openehr::229::primary nursing care" />
+                      <xs:enumeration value="openehr::230::primary allied health care" />
+                      <xs:enumeration value="openehr::231::midwifery care" />
+                      <xs:enumeration value="openehr::232::secondary medical care" />
+                      <xs:enumeration value="openehr::233::secondary nursing care" />
+                      <xs:enumeration value="openehr::234::secondary allied health care" />
+                      <xs:enumeration value="openehr::235::complementary health care" />
+                      <xs:enumeration value="openehr::236::dental care" />
+                      <xs:enumeration value="openehr::237::nursing home care" />
+                      <xs:enumeration value="openehr::238::other care" />
+                      <xs:enumeration value="openehr::435::laboratory" />
+                      <xs:enumeration value="openehr::436::imaging" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="follow_up" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="followup_event" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="follow-up_status" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:enumeration value="at0012::Patient Deceased" />
+                            <xs:enumeration value="at0013::In Follow-up" />
+                            <xs:enumeration value="at0014::Lost to Follow-up" />
+                            <xs:enumeration value="at0015::Graft Failed" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="days_between_transplant_and_event_status" minOccurs="0" type="xs:duration" />
+                      <xs:element name="event" minOccurs="0">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="patient_deceased" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="cause_of_death_unified" minOccurs="0">
+                                    <xs:complexType>
+                                      <xs:sequence>
+                                        <xs:element name="code" type="xs:string" />
+                                        <xs:element name="terminology">
+                                          <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                              <xs:enumeration value="ICD10" />
+                                            </xs:restriction>
+                                          </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="value" type="xs:string" />
+                                      </xs:sequence>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element name="cause_of_death_local" minOccurs="0" type="xs:string" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="graft_failure" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="cause_of_graft_failure_unified" minOccurs="0">
+                                    <xs:complexType>
+                                      <xs:sequence>
+                                        <xs:element name="code" type="xs:string" />
+                                        <xs:element name="terminology">
+                                          <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                              <xs:enumeration value="ICD10" />
+                                            </xs:restriction>
+                                          </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="value" type="xs:string" />
+                                      </xs:sequence>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element name="cause_of_graft_failure_local" minOccurs="0" type="xs:string" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="laboratory_test" minOccurs="0">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="creatinine" minOccurs="0" type="xs:string" />
+                      <xs:element name="creatinine_mass_volume_in_serum_or_plasma" minOccurs="0">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="analyte_result" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="magnitude" type="xs:decimal" />
+                                  <xs:element name="unit">
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:enumeration value="mg/dl" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="creatinine_moles_volume_in_serum_or_plasma" minOccurs="0">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="analyte_result" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="magnitude" type="xs:decimal" />
+                                  <xs:element name="unit">
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:enumeration value="μmol/l" />
+                                        <xs:enumeration value="mmol/dl" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="sf12_score" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="physical_health_pcs_score" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:int">
+                            <xs:minInclusive value="0" />
+                            <xs:maxInclusive value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="mental_health_mcs_score" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:int">
+                            <xs:minInclusive value="0" />
+                            <xs:maxInclusive value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="total_score" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:int">
+                            <xs:minInclusive value="0" />
+                            <xs:maxInclusive value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="followed_transplant_summary" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="transplant" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="graft_name" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="code" type="xs:string" />
+                                  <xs:element name="terminology">
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Grafts_v1" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                  <xs:element name="value" type="xs:string" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="graft_id" minOccurs="0">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="id" type="xs:string" />
+                                  <xs:element name="type" type="xs:string" />
+                                  <xs:element name="issuer" type="xs:string" />
+                                  <xs:element name="assigner" type="xs:string" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="transplant_sequence" minOccurs="0" type="xs:int" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="category" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="433::event" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="template_id" fixed="EDITH Follow Up" use="required" />
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
