@@ -1,0 +1,9 @@
+select
+    a/uid/value as doc_uid,
+    a/context/other_context[at0001]/items[at0002, 'Transplantation ID']/value/value as tx_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.story.v1, 'Donor details']/protocol[at0007]/items[openEHR-EHR-CLUSTER.donor_id.v0]/items[at0001]/value/id as d_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Donor HLA']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histoimmunogenetic_typing.v0]/items[at0007]/items[at0037]/items[openEHR-EHR-CLUSTER.antigen.v0]/items[at0014]/value/value as d_hla_code,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Donor HLA']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.histoimmunogenetic_typing.v0]/items[at0007]/items[at0037]/items[openEHR-EHR-CLUSTER.antigen.v0]/items[at0001]/value/value as d_hla_locus
+from EHR e
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+where a/name/value='EDITH Initial Report'

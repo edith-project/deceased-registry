@@ -1,27 +1,27 @@
-nr;  column_name; format;"Format (codes represented as ""code::value"")";Description;mandatory
-1;"  ""ctx/language""";Fixed value;en;;yes
-2;"  ""ctx/territory""";Fixed value;GB;;yes
-3;"  ""ctx/composer_name""";string;;NCA USER NAME;yes
-4;"  ""ctx/id_namespace""";string;;NCA NAME;yes
-5;"  ""ctx/id_scheme""";string ;;NCA SCHEME NAME;yes
-6;"  ""edith_follow_up_report/context/transplantation_id""";string;;Unique transplant id within NCA (psuedononimised);yes
-7;"  ""edith_follow_up_report/follow_up/followup_event:0/follow-up_status|code""";code;"""at0012::Patient Deceased""|""at0013::In Follow-up|""at0014::Lost to Follow-up""|""at0015::Graft Failed""";Follow-up event this record relates to (In follow-up is a normal follow-up);yes
-8;"  ""edith_follow_up_report/follow_up/followup_event:0/days_between_transplant_and_event_status""";Duration  iso 8601;" In days example: ""P4D"" is 4 days";Time between transplant and follow-up event in days;yes
-9;"  ""edith_follow_up_report/follow_up/followup_event:0/event/patient_deceased/cause_of_death_unified|code""";Terminology ICD10;;Cause of death coded in ICD10;"when follow-up status is ""Patient Deceased"" "
-11;"  ""edith_follow_up_report/follow_up/followup_event:0/event/patient_deceased/cause_of_death_local""";string;;Local cause of death (enter local coding for cause of death) ;no
-12;"  ""edith_follow_up_report/follow_up/followup_event:0/event/graft_failure/cause_of_graft_failure_unified|code""";Terminology ICD10;;Cause of graft failure coded in ICD10;"when follow-up status is ""Graft Failed"" "
-14;"  ""edith_follow_up_report/follow_up/followup_event:0/event/graft_failure/cause_of_graft_failure_local""";string;;Local Cause of graft failure (enter local coding for cause of death) ;no
-15;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine""";Fixed value;Creatinine;Test name (fixed);
-16;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_mass_volume_in_serum_or_plasma/analyte_result|magnitude""";Decimal (3.2);;Creatinine result in mass/volume magnitude;choose either mass/volume or moles/volume
-17;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_mass_volume_in_serum_or_plasma/analyte_result|unit""";" ""mg/dl""";"""mg/dl::miligrams per deciliter";Creatinine result in mass/volume unit;choose either mass/volume or moles/volume
-18;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_moles_volume_in_serum_or_plasma/analyte_result|magnitude"""; 58.05;;Creatinine result in moles/volume magnitude;choose either mass/volume or moles/volume
-19;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_moles_volume_in_serum_or_plasma/analyte_result|unit""";" ""?mol/l""";"""?mol/l:: micromol per liter""|""mmol/dl"""" milimol per liter""";Creatinine result in moles/volume unit;choose either mass/volume or moles/volume
-20;"  ""edith_follow_up_report/follow_up/sf12_score:0/physical_health_pcs_score""";integer;0-100;SF12  (Quality of life) Physical Health;
-21;"  ""edith_follow_up_report/follow_up/sf12_score:0/mental_health_mcs_score""";integer;0-100;SF12  (Quality of life) Mental Health;
-22;"  ""edith_follow_up_report/follow_up/sf12_score:0/total_score""";integer;0-100;SF12  (Quality of life) Total Health;
-23;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_name|code""";Terminology Grafts_v1;;Graft Name (e.g. LKI, RKI etc.);
-25;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id""";string;;psuedononimised graft ID assigned by NCA ;
-26;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|issuer""";string;;Issuer of the graft ID (for instance NCA);yes with ID
-27;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|assigner""";string;;Assigner of the graft ID (for instance NCA);yes with ID
-28;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|type""";string;;Type of donor ID;yes with ID
-29;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/transplant_sequence""";integer;;Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional
+nr;  column_name;short_name; format;"Format (codes represented as ""code::value"")";Description;mandatory
+1;"  ""ctx/language""";;Fixed value;en;;yes
+2;"  ""ctx/territory""";;Fixed value;GB;;yes
+3;"  ""ctx/composer_name""";composer;string;;NCA USER NAME;yes
+4;"  ""ctx/id_namespace""";;string;;NCA NAME;yes
+5;"  ""ctx/id_scheme""";;string ;;NCA SCHEME NAME;yes
+6;"  ""edith_follow_up_report/context/transplantation_id""";tx_id;string;;Unique transplant id within NCA (psuedononimised);yes
+7;"  ""edith_follow_up_report/follow_up/followup_event:0/follow-up_status|code""";;code;"""at0012::Patient Deceased""|""at0013::In Follow-up|""at0014::Lost to Follow-up""|""at0015::Graft Failed""";Follow-up event this record relates to (In follow-up is a normal follow-up);yes
+8;"  ""edith_follow_up_report/follow_up/followup_event:0/days_between_transplant_and_event_status""";;Duration  iso 8601;" In days example: ""P4D"" is 4 days";Time between transplant and follow-up event in days;yes
+9;"  ""edith_follow_up_report/follow_up/followup_event:0/event/patient_deceased/cause_of_death_unified|code""";;Terminology ICD10;;Cause of death coded in ICD10;"when follow-up status is ""Patient Deceased"" "
+11;"  ""edith_follow_up_report/follow_up/followup_event:0/event/patient_deceased/cause_of_death_local""";;string;;Local cause of death (enter local coding for cause of death) ;no
+12;"  ""edith_follow_up_report/follow_up/followup_event:0/event/graft_failure/cause_of_graft_failure_unified|code""";;Terminology ICD10;;Cause of graft failure coded in ICD10;"when follow-up status is ""Graft Failed"" "
+14;"  ""edith_follow_up_report/follow_up/followup_event:0/event/graft_failure/cause_of_graft_failure_local""";;string;;Local Cause of graft failure (enter local coding for cause of death) ;no
+15;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine""";;Fixed value;Creatinine;Test name (fixed);
+16;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_mass_volume_in_serum_or_plasma/analyte_result|magnitude""";;Decimal (3.2);;Creatinine result in mass/volume magnitude;choose either mass/volume or moles/volume
+17;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_mass_volume_in_serum_or_plasma/analyte_result|unit""";;" ""mg/dl""";"""mg/dl::miligrams per deciliter";Creatinine result in mass/volume unit;choose either mass/volume or moles/volume
+18;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_moles_volume_in_serum_or_plasma/analyte_result|magnitude""";; 58.05;;Creatinine result in moles/volume magnitude;choose either mass/volume or moles/volume
+19;"  ""edith_follow_up_report/follow_up/laboratory_test/creatinine_moles_volume_in_serum_or_plasma/analyte_result|unit""";;" ""?mol/l""";"""?mol/l:: micromol per liter""|""mmol/dl"""" milimol per liter""";Creatinine result in moles/volume unit;choose either mass/volume or moles/volume
+20;"  ""edith_follow_up_report/follow_up/sf12_score:0/physical_health_pcs_score""";;integer;0-100;SF12  (Quality of life) Physical Health;
+21;"  ""edith_follow_up_report/follow_up/sf12_score:0/mental_health_mcs_score""";;integer;0-100;SF12  (Quality of life) Mental Health;
+22;"  ""edith_follow_up_report/follow_up/sf12_score:0/total_score""";r_sf12_total;integer;0-100;SF12  (Quality of life) Total Health;
+23;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_name|code""";fup_graft;Terminology Grafts_v1;;Graft Name (e.g. LKI, RKI etc.);
+25;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id""";fup_graft_id;string;;psuedononimised graft ID assigned by NCA ;
+26;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|issuer""";;string;;Issuer of the graft ID (for instance NCA);yes with ID
+27;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|assigner""";;string;;Assigner of the graft ID (for instance NCA);yes with ID
+28;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/graft_id|type""";;string;;Type of donor ID;yes with ID
+29;"  ""edith_follow_up_report/follow_up/followed_transplant_summary:0/transplant:0/transplant_sequence""";fup_tx_sequence;integer;;Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional

@@ -1,0 +1,17 @@
+select
+    a/uid/value as doc_uid,
+    a/context/other_context[at0001]/items[at0002, 'Transplantation ID']/value/value as tx_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[at0004]/value/value as tx_date,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[at0022]/value/value as tx_multi_organ_transplant,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[at0014]/items[at0017]/value/value as tx_centertype,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[at0014]/items[at0016]/value/id as tx_center_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[at0006]/value/value as tx_graft,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[at0008]/value/id as tx_graft_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[openEHR-EHR-CLUSTER.transplant_ischemia_times.v0]/items[at0006]/value/value as tx_cold_ischemia_time,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[openEHR-EHR-CLUSTER.kidney_transplant_details.v0]/items[at0003]/value/value as tx_pre_emptive_transplant,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[openEHR-EHR-CLUSTER.kidney_transplant_details.v0]/items[at0006]/value/value as tx_time_dialysis_and_transplant,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[openEHR-EHR-CLUSTER.kidney_transplant_details.v0]/items[at0007]/value/magnitude as tx_number_previous_kidney,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/protocol[at0006]/items[at0021]/value/magnitude as tx_sequence
+from EHR e
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+where a/name/value='EDITH Initial Report'
