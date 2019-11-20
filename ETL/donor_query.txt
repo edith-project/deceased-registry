@@ -1,0 +1,31 @@
+select
+    a/uid/value as doc_uid,
+    a/context/other_context[at0001]/items[at0002, 'Transplantation ID']/value/value as tx_id,
+    a/context/start_time/value as date,
+    a/composer/external_ref/id/value as composer,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Current Transplantation']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Transplant summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[at0009]/value/id as tx_donor_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.story.v1, 'Donor details']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.gender.v1]/items[at0019, 'Gender at Birth']/value/value as d_gender_birth,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.story.v1, 'Donor details']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.donor_type.v0]/items[at0001]/value/value as d_type,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.story.v1, 'Donor details']/protocol[at0007]/items[openEHR-EHR-CLUSTER.donor_id.v0]/items[at0001]/value/id as d_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.age.v0]/data[at0001]/events[at0002, 'at Time Donation']/data[at0003]/items[at0004]/value/value as d_age,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.blood_match.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/value as d_blood_group,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.blood_match.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value/value as d_rhesus,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1, 'Cause of Death']/data[at0001]/items[at0002, 'Cause of death name']/value/value as d_cause_of_death_unified,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.body_weight.v2]/data[at0002]/events[at0003, 'at Time Donation']/data[at0001]/items[at0004]/value/magnitude as d_weight,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.body_weight.v2]/data[at0002]/events[at0003, 'at Time Donation']/data[at0001]/items[at0004]/value/units as d_weight_unit,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.height.v2]/data[at0001]/events[at0002, 'time of donation']/data[at0003]/items[at0004]/value/magnitude as d_height,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.height.v2]/data[at0001]/events[at0002, 'time of donation']/data[at0003]/items[at0004]/value/units as d_height_unit,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Virology']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'HIV (I/II) Ab']/items[at0001]/value/value as d_hiv_ab,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Virology']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'HCV Ab']/items[at0001]/value/value as d_hcv_ab,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Virology']/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'CMV IgG']/items[at0001]/value/value as d_cmv_igg,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Diabetes']/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002, 'Diabetes']/value/value as d_diabetis_type,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Diabetes']/items[openEHR-EHR-EVALUATION.absence.v1]/data[at0001]/items[at0002]/value/value as d_diabetis_absence,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Diabetes']/items[openEHR-EHR-EVALUATION.exclusion_specific.v1]/data[at0001]/items[at0003, 'Problem/diagnosis']/value/value as d_diabetis_exclusion,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Malignant tumours']/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002, 'Malignant tumour']/value/value as d_malignant_tumour,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Malignant tumours']/items[openEHR-EHR-EVALUATION.absence.v1]/data[at0001]/items[at0002]/value/value as d_malignant_tumour_absence,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-SECTION.adhoc.v1, 'Malignant tumours']/items[openEHR-EHR-EVALUATION.exclusion_specific.v1]/data[at0001]/items[at0003, 'Problem/diagnosis']/value/value as d_malignant_tumour_exclusion,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-EVALUATION.medication_summary-et.v0]/data[at0001]/items[at0002, 'Anti Hypertension drugs']/value/value as d_medication_name,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Donor Data']/items[openEHR-EHR-EVALUATION.medication_summary-et.v0]/data[at0001]/items[at0003.1]/value/value as d_medication_ever_used
+from EHR e
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+where a/name/value='EDITH Initial Report'

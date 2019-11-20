@@ -1,0 +1,9 @@
+select
+    a/uid/value as doc_uid,
+    a/context/other_context[at0001]/items[at0002, 'Transplantation ID']/value/value as tx_id,
+    e/ehr_status/subject/external_ref/id/value as r_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Recipient Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Laboratory test']/data[at0001]/events[at0002, 'Last result during waiting list period before transplant']/data[at0003]/items[openEHR-EHR-CLUSTER.histoimmunogenetic_typing.v0]/items[at0007]/items[at0037]/items[openEHR-EHR-CLUSTER.antigen.v0]/items[at0014]/value/value as r_hla_code,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Recipient Data']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0, 'Laboratory test']/data[at0001]/events[at0002, 'Last result during waiting list period before transplant']/data[at0003]/items[openEHR-EHR-CLUSTER.histoimmunogenetic_typing.v0]/items[at0007]/items[at0037]/items[openEHR-EHR-CLUSTER.antigen.v0]/items[at0001]/value/value as r_hla_locus
+from EHR e
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+where a/name/value='EDITH Initial Report'

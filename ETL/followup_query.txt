@@ -1,0 +1,23 @@
+select
+    a/uid/value as doc_uid,
+    e/ehr_status/subject/external_ref/id/value as r_id,
+    a/context/other_context[at0001]/items[at0002, 'Transplantation ID']/value/value as tx_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0002]/value/value as fup_status,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0025]/value/value as fup_days_since_transplant,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0006]/items[at0007]/items[at0021]/value/value as fup_cause_of_death_unified,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0006]/items[at0007]/items[at0023]/value/value as fup_cause_of_death_local,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0006]/items[at0009]/items[at0022]/value/value as fup_cause_of_graft_failure_unified,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.followup_event.v0]/data[at0001]/items[at0006]/items[at0009]/items[at0024]/value/value as fup_cause_of_graft_failure_local,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'Creatinine [Mass/volume] in Serum or Plasma']/items[at0001]/value/magnitude as fup_creat_mass_volume,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'Creatinine [Mass/volume] in Serum or Plasma']/items[at0001]/value/units as fup_creat_mass_volume_unit,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'Creatinine [Moles/volume] in Serum or Plasma']/items[at0001]/value/magnitude as fup_creat_moles_volume,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.laboratory_test.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v0, 'Creatinine [Moles/volume] in Serum or Plasma']/items[at0001]/value/units as fup_creat_moles_volume_unit,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.sf12_score.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[at0004]/value/magnitude as r_sf12_physical,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.sf12_score.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[at0005]/value/magnitude as r_sf12_mental,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-OBSERVATION.sf12_score.v0]/data[at0001]/events[at0002, 'Last result before follow-up moment']/data[at0003]/items[at0006]/value/magnitude as r_sf12_total,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Followed Transplant Summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[at0006]/value/value as fup_graft,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Followed Transplant Summary']/data[at0001]/items[openEHR-EHR-CLUSTER.transplant.v0]/items[at0008]/value/id as fup_graft_id,
+    a/content[openEHR-EHR-SECTION.adhoc.v1, 'Follow up']/items[openEHR-EHR-EVALUATION.transplant_summary.v1, 'Followed Transplant Summary']/protocol[at0006]/items[at0021]/value/magnitude as fup_tx_sequence
+from EHR e
+contains COMPOSITION a[openEHR-EHR-COMPOSITION.report.v1]
+where a/name/value='EDITH Follow Up Report'
