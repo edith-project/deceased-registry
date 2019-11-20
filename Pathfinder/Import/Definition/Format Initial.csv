@@ -108,5 +108,5 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 109;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|issuer""";;Duration  iso 8601;;Historic Transplant: Time between first dialysis and transplant;
 110;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|assigner""";;integer;;Historic Transplant: Number of previous Kidney transplants;
 111;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|type""";;integer;;Historic Transplant: Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional
-112;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant_sequence""";htx_sequence;Prescription;;;Historic transplants are optional
+112;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant_sequence""";htx_sequence;integer;;;Historic transplants are optional
 ;;;;;;Historic transplants are optional
