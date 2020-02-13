@@ -1,6 +1,6 @@
-# deceased-registry
+# recipient-registry
 
-Contains information and artifacts for the openEHR based Edith deceased donation registry (https://edith-project.eu/).
+Contains information and artifacts for the openEHR based Edith transplant recipient registry (https://edith-project.eu/).
 
 Folders:
 
