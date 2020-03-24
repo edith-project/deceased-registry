@@ -1,5 +1,4 @@
 nr;  column_name;short_name; format;"Format (codes represented as ""code::value"")";Description;mandatory
-0;"""subjectId""";subjectId;string;;psuedononimised recipient ID assigned by NCA;yes
 1;"  ""ctx/language""";;Fixed value;en;;yes
 2;"  ""ctx/territory""";;Fixed value;GB;;yes
 3;"  ""ctx/composer_name""";composer;string;;NCA USER NAME;yes
@@ -9,17 +8,10 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 7;"  ""edith_initial_report/donor_data/donor_details/gender/gender_at_birth|code""";d_gender_birth;code;"Male::Male|""Female::Female""|""Unknown::Unknown""";Gender at Birth; 
 8;"  ""edith_initial_report/donor_data/donor_details/donor_type:0/type|code""";d_type;code;"at0005::DBD|""at0006::DCD""|""at0008::Living""";Donor type: Donation after Brain Death (DBD),Donation after Cardiac Death (DCD),Living; 
 9;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id""";d_id;string;;psuedononimised donor ID assigned by NCA;yes
-<<<<<<< HEAD
 10;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|issuer""";d_id_issuer;string;;Issuer of the donor ID (for instance NCA);yes with ID
 11;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|assigner""";d_id_assigner;string;;Assigner of the donor ID (for instance NCA);yes with ID
 12;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|type""";d_id_type;string;;Type of donor ID ;yes with ID
 13;"  ""edith_initial_report/donor_data/age/chronological_age""";d_age;Duration  iso 8601;;Donor age in years/m (for instance P1Y4M);
-=======
-10;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|issuer""";d_id_issuer;Fixed Value;Edith;Issuer of the donor ID (for instance NCA);yes with ID
-11;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|assigner""";d_id_assigner;Fixed Value;Edith;Assigner of the donor ID (for instance NCA);yes with ID
-12;"  ""edith_initial_report/donor_data/donor_details/donor_identification:0/donor_id|type""";d_id_type;Fixed Value;Local id;Type of donor ID ;yes with ID
-13;"  ""edith_initial_report/donor_data/age/chronological_age""";d_age;Duration  iso 8601;;Donor age in years/m (for instance P1Y4M) at transplant;
->>>>>>> Develop
 14;"  ""edith_initial_report/donor_data/blood_matching/abo|code""";d_blood_group;Terminology ET_ABO;;Donor blood group;
 15;"  ""edith_initial_report/donor_data/blood_matching/rhesus|code""";d_rhesus;Terminology ET_Rhesus;;Donor blood group rhesus factor;
 16;"   ""edith_initial_report/donor_data/cause_of_death/cause_of_death_name|code""";d_cause_of_death_unified;Terminology ICD10;;Cause of death coded in ICD10;
@@ -27,22 +19,15 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 18;"  ""edith_initial_report/donor_data/body_weight/weight|unit""";d_weight_unit;unit;" ""kg :: kg""|""[lb_av]::pound""";; 
 19;"  ""edith_initial_report/donor_data/height_length/height_length|magnitude""";d_height;decimal (3.2);;Donor Height;
 20;"  ""edith_initial_report/donor_data/height_length/height_length|unit""";d_height_unit;cm;"""cm::cm"" || ""[in_i]::inch"" ";;
-<<<<<<< HEAD
 21;"  ""edith_initial_report/donor_data/virology/any_event:0/test_name""";"d_name""_name";Fixed Value;Virology;Virology;yes
-=======
-21;"  ""edith_initial_report/donor_data/virology/any_event:0/test_name""";d_virology_name;Fixed Value;Virology;Virology;yes
->>>>>>> Develop
 22;"  ""edith_initial_report/donor_data/virology/any_event:0/hiv_i_ii_ab/analyte_result|code""";d_hiv_ab;Code;"""Reactive::Reactive if IgG >2"" |""Non Reactive::Non Reactive""| ""Unknown::Unknown""";HIV I/II Ab;
 23;"  ""edith_initial_report/donor_data/virology/any_event:0/hcv_ab/analyte_result|code""";d_hcv_ab;Code;"""Reactive::Reactive if IgG >2"" |""Non Reactive::Non Reactive""| ""Unknown::Unknown""";HCV Ab;
 24;"  ""edith_initial_report/donor_data/virology/any_event:0/cmv_igg/analyte_result|code""";d_cmv_igg;Code;"""Reactive::Reactive if IgG >2"" |""Non Reactive::Non Reactive""| ""Unknown::Unknown""";CMV Igg;
 25;"  ""edith_initial_report/donor_data/donor_hla/test_name""";d_hla_testname;Fixed value;HLA;HLA (this archtype follows HML https://www.sciencedirect.com/science/article/pii/S0198885915004346) ;yes
 26;"  ""edith_initial_report/donor_data/donor_hla/histoimmunogenetic_typing:0/gene_family|code""";d_genefamily_code;at0004;"""at0004::HLA""";Gene Family ;
 27;"  ""edith_initial_report/donor_data/donor_hla/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/code|code""";d_hla_code;terminology HLA_nomenclature_2010;;HLA code based on ET HLA Nomenclature 2010;
-<<<<<<< HEAD
 28;"  ""edith_initial_report/donor_data/donor_hla/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/locus|code""";d_hla_locus;code;"at0002::HLA-A""|""at0003::HLA-B""|""at0005::HLA-DR""";Please note that per locus a haploid of 2 antigens should be provided;
 29;"  ""edith_initial_report/donor_data/donor_hla/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/type""";d_hla_type;string;;Type is the the part of the code after the locus (so in A1 this is 1) Not mandatory;
-=======
->>>>>>> Develop
 30;"  ""edith_initial_report/donor_data/diabetes/problem_diagnosis/diabetes|code""";d_diabetes_type;"Terminology  ""ICD10_diabetes""";;Diabetic disease coded in ICD10 (E08 - E13), if no diabetic this field should not be set.;
 31;"  ""edith_initial_report/donor_data/diabetes/absence_of_information/absence_statement""";d_diabetes_absence;code;"""No information available about diabetes :: No information available about diabetes""";Set this field if no information is available on diabetis status;
 32;"  ""edith_initial_report/donor_data/diabetes/exclusion_-_specific/problem_diagnosis""";d_diabetes_exclusion;code;"""Patient is not diabetic::Patient is not diabetic""";Should be set if donor is not diabetic ;
@@ -72,13 +57,10 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 56;"  ""edith_initial_report/recipient_data/laboratory_test/histoimmunogenetic_typing:0/gene_family|code""";r_genefamily_code;at0004;"""at0004::HLA""";Gene Family ;
 57;"  ""edith_initial_report/recipient_data/laboratory_test/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/code|code""";r_hla_code;terminology HLA_nomenclature_2010;;HLA code based on ET HLA Nomenclature 2010;
 59;"  ""edith_initial_report/recipient_data/laboratory_test/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/locus|code""";r_hla_locus;code;"at0002::HLA-A""|""at0003::HLA-B""|""at0005::HLA-DR""";Please note that per locus a haploid of 2 antigens should be provided;
-<<<<<<< HEAD
 60;"  ""edith_initial_report/recipient_data/laboratory_test/histoimmunogenetic_typing:0/allel-assignment/haploid:0/antigen:0/type""";d_typing:0/allel-assignment/haploid:0/antigen_type;string;;Type is the the part of the code after the locus (so in A1 this is 1) Not mandatory;
-=======
->>>>>>> Develop
 61;"  ""edith_initial_report/recipient_data/sf12_score/physical_health_pcs_score""";r_sf12_physical;integer;0-100;SF12  (Quality of life) Physical Health;
 62;"  ""edith_initial_report/recipient_data/sf12_score/mental_health_mcs_score""";r_sf12_mental;integer;0-100;SF12  (Quality of life) Mental Health;
-63;"  ""edith_initial_report/recipient_data/sf12_score/total_score""";r_sf12_total;integer;0-200;SF12  (Quality of life) Total Health;
+63;"  ""edith_initial_report/recipient_data/sf12_score/total_score""";r_sf12_total;integer;0-100;SF12  (Quality of life) Total Health;
 64;"  ""edith_initial_report/recipient_data/primary_diagnosis_unified/problem_diagnosis_name|code""";r_prim_diag_unified;terminology ICD10;;Unified Primary Diagnosis (ICD10);
 65;"  ""edith_initial_report/recipient_data/primary_diagnosis_local/problem_diagnosis_name""";r_prim_diag_local;string;;Local Diagnosis name (free text);
 66;"  ""edith_initial_report/recipient_data/blood_matching/abo|code""";r_blood_group;Terminology ET_ABO;;Donor blood group;
@@ -89,7 +71,6 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 71;"  ""edith_initial_report/current_transplantation/transplant_summary/multi_organ_transplant""";tx_multi_organ_transplant;BOOLEAN;TRUE|FALSE;Was this a multi organ transplant ;
 72;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_type|code""";tx_centertype;code;"""at0018::Transplant Center""";Center type (fixed to at0018, transplant center);
 73;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id""";tx_center_id;string;;psuedononimised center ID assigned by NCA;
-<<<<<<< HEAD
 74;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|issuer""";tx_center_id_issuer;string;;Issuer of the center ID (for instance NCA);yes with ID
 75;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|assigner""";tx_center_id_assigner;string;;Assigner of the center ID (for instance NCA);yes with ID
 76;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|type""";tx_center_id_type;string;;Type of center ID;yes with ID
@@ -102,20 +83,6 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 83;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|issuer""";tx_donor_id_issuer;string;;Issuer of the donor ID (for instance NCA);yes with ID
 84;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|assigner""";tx_donor_id_assigner;string;;Assigner of the donor ID (for instance NCA);yes with ID
 85;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|type""";tx_donor_id_type;string;;Type of donor ID;yes with ID
-=======
-74;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|issuer""";tx_center_id_issuer;Fixed Value;Edith;Issuer of the center ID (for instance NCA);yes with ID
-75;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|assigner""";tx_center_id_assigner;Fixed Value;Edith;Assigner of the center ID (for instance NCA);yes with ID
-76;"  ""edith_initial_report/current_transplantation/transplant_summary/center/center_id|type""";tx_center_id_type;Fixed Value;Local id;Type of center ID;yes with ID
-77;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/graft_name|code""";tx_graft;Terminology Grafts_v1;;Graft Name (e.g. LKI, RKI etc.);
-78;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/graft_id""";tx_graft_id;Fixed Value;;psuedononimised graft ID assigned by NCA ;
-79;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/graft_id|issuer""";tx_graft_id_issuer;Fixed Value;Edith;Issuer of the graft ID (for instance NCA);yes with ID
-80;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/graft_id|assigner""";tx_graft_id_assigner;Fixed Value;Edith;Assigner of the graft ID (for instance NCA);yes with ID
-81;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/graft_id|type""";tx_graft__id_type;string;Local id;Type of donor ID;yes with ID
-82;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id""";tx_donor_id;string;;psuedononimised donor ID assigned by NCA ;yes
-83;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|issuer""";tx_donor_id_issuer;Fixed Value;Edith;Issuer of the donor ID (for instance NCA);yes with ID
-84;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|assigner""";tx_donor_id_assigner;Fixed Value;Edith;Assigner of the donor ID (for instance NCA);yes with ID
-85;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/donor_id|type""";tx_donor_id_type;Fixed Value;Local id;Type of donor ID;yes with ID
->>>>>>> Develop
 86;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/transplant_ischemia_times/cold_ischemia_time_cit""";tx_cold_ischemia_time;Duration  iso 8601;hours /minutes example(PT3H1M, 3 hours, 1 minute) ;Cold ischemia time;
 87;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/kidney_transplant_details/pre-emptive_transplant|code""";tx_pre_emptive_transplant;at0004;"""at0004::Yes""|""at0005::No""";Was this a pre-emptive transplant (transplant before patient is on dialysis);
 88;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant:0/kidney_transplant_details/time_between_first_dialysis_and_transplant""";tx_time_dialysis_and_transplant;Duration  iso 8601;;Time between first dialysis and transplant;
@@ -123,7 +90,6 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 90;"  ""edith_initial_report/current_transplantation/transplant_summary/transplant_sequence""";tx_sequence;integer;;Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional
 91;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant_date""";htx_date;Partial date (Year);2019-0-0;Historic Transplant: Transplant date only the year part (all other should be 0) ;
 92;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/multi_organ_transplant""";htx_multi_organ_transplant;BOOLEAN;TRUE|FALSE;Historic Transplant: Was this a multi organ transplant ;
-<<<<<<< HEAD
 94;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_type|code""";htx_centertype;string;;Historic Transplant: psuedononimised center ID assigned by NCA;
 95;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id""";htx_center_id;string;;Historic Transplant: Issuer of the center ID (for instance NCA);yes with ID
 96;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id|issuer""";d_id_issuer;string;;Historic Transplant: Assigner of the center ID (for instance NCA);yes with ID
@@ -144,24 +110,3 @@ nr;  column_name;short_name; format;"Format (codes represented as ""code::value"
 111;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|type""";d_id_type;integer;;Historic Transplant: Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional
 112;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant_sequence""";htx_sequence;integer;;;Historic transplants are optional
 ;;;;;;Historic transplants are optional
-=======
-94;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_type|code""";htx_centertype;string;;Historic Transplant center type;
-95;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id""";htx_center_id;string;;Historic Transplant: psuedononimised center ID assigned by NCA;
-96;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id|issuer""";htx_center_id_issuer;Fixed Value;Edith;Historic Transplant: Issuer of the center ID (for instance NCA);yes with ID
-97;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id|assigner""";htx_center_id_assigner;Fixed Value;Edith;Historic Transplant: Assigner of the center ID (for instance NCA);yes with ID
-98;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/center/center_id|type""";htx_center_id_type;Fixed Value;Local id;Historic Transplant: Type of center ID;yes with ID
-99;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/graft_name|code""";htx_graft;Terminology Grafts_v1;;Historic Transplant: Graft Name (e.g. LKI, RKI etc.);
-100;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/graft_id""";htx_graft_id;string;;Historic Transplant: Psuedononimised graft ID assigned by NCA ;
-101;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/graft_id|issuer""";htx_graft_id_issuer;Fixed Value;Edith;Historic Transplant: Issuer of the graft ID (for instance NCA);yes with ID
-102;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/graft_id|assigner""";htx_graft_id_assigner;Fixed Value;Edith;Historic Transplant: Assigner of the graft ID (for instance NCA);yes with ID
-103;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/graft_id|type""";htx_graft_id_type;Fixed Value;Local id;Historic Transplant: Type of donor ID;yes with ID
-104;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/donor_id""";htx_donor_id_id;string;;Historic Transplant: Psuedononimised donor ID assigned by NCA ;yes
-105;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/donor_id|issuer""";htx_donor_issuer;Fixed Value;Edith;Historic Transplant:  Issuer of the donor ID (for instance NCA);yes with ID
-106;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/donor_id|assigner""";htx_donor_assigner;Fixed Value;Edith;Historic Transplant: Assigner of the donor ID (for instance NCA);yes with ID
-107;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant:0/donor_id|type""";htx_donor_type;Fixed Value;Local id;Historic Transplant: Type of donor ID;yes with ID
-108;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id""";htx_id;string;;Historic Transplant: Psuedononimised transplant ID assigned by NCA ;yes
-109;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|issuer""";htx_id_issuer;Fixed Value;Edith;Historic Transplant:  Issuer of the transplant ID (for instance NCA);yes with ID
-110;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|assigner""";htx_id_assigner;Fixed Value;Edith;Historic Transplant: Assigner of the transplant ID (for instance NCA);yes with ID
-111;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplantation_id|type""";htx_id_type;Fixed Value;Local id;Historic Transplant: Type of transplant ID;yes with ID
-112;"  ""edith_initial_report/historic_transplantations/historic_transplant_summary:0/transplant_sequence""";htx_sequence;integer;;Historic Transplant: Sequence of this transplant within the year of transplant (order);If transplant ID is a sequence this is optional
->>>>>>> Develop
