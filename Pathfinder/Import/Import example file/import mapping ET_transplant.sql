@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW EDITH_TRANSPLANT_VW AS
+CREATE OR REPLACE VIEW DM.EDITH_TRANSPLANT_VW AS
 select 
 'CR-T'||ORA_HASH(CONCAT(tx.txp_regn,23098),999999) AS tx_id
 ,extract(year from tx.txp_date)||'-1-1' as tx_date
@@ -10,8 +10,8 @@ select
 , 'Edith' tx_center_id_issuer
 , 'Edith' tx_center_id_assigner
 , 'Local id' tx_center_id_type
-, tx.txp_organ_detail_code as tx_graft
-, tx.txp_organ_detail_code as tx_graft_val
+, decode(tx.txp_organ_detail_code,'RKi','Right Kidney','LKi','Left Kidney') as tx_graft_name_code
+, tx.txp_organ_detail_code as tx_graft_name
 , 'CR-D'||ORA_HASH(CONCAT(tx.txp_donor,23098),999999) tx_donor_id
 , 'Edith' as tx_donor_id_issuer
 , 'Edith' as tx_donor_id_assigner

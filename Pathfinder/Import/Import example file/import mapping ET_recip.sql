@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW EDITH_RECIP_VW AS
+CREATE OR REPLACE VIEW DM.EDITH_RECIP_VW AS
 SELECT
 --r.wdtr_d_regn,
 'CR-R'||r.wdtr_r_regn as SubjectId,
