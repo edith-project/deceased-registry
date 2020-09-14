@@ -1,9 +1,10 @@
 nr;  column_name;short_name; format;"Format (codes represented as ""code::value"")";Description;mandatory
-1;"  ""ctx/language""";;Fixed value;en;;yes
-2;"  ""ctx/territory""";;Fixed value;GB;;yes
+0;"""subjectId""";subjectId;string;;psuedononimised recipient ID assigned by NCA;yes
+1;"  ""ctx/language""";language;Language code;en;Language of the data (should be 'en' for English);yes
+2;"  ""ctx/territory""";territory;Iso country code (2 letter);;Country of the NCA (for instance GB for Great Britain);yes
 3;"  ""ctx/composer_name""";composer;string;;NCA USER NAME;yes
-4;"  ""ctx/id_namespace""";;string;;NCA NAME;yes
-5;"  ""ctx/id_scheme""";;string ;;NCA SCHEME NAME;yes
+4;"  ""ctx/id_namespace""";namespace;string;;NCA NAME;yes
+5;"  ""ctx/id_scheme""";id_scheme;string ;;NCA SCHEME NAME;yes
 6;"  ""edith_follow_up_report/context/transplantation_id""";tx_id;string;;Unique transplant id within NCA (psuedononimised);yes
 7;"  ""edith_follow_up_report/follow_up/followup_event:0/follow-up_status|code""";fup_status;code;"""at0012::Patient Deceased""|""at0013::In Follow-up|""at0014::Lost to Follow-up""|""at0015::Graft Failed""";Follow-up event this record relates to (In follow-up is a normal follow-up);yes
 8;"  ""edith_follow_up_report/follow_up/followup_event:0/days_between_transplant_and_event_status""";fup_days_since_transplant;Duration  iso 8601;" In days example: ""P4D"" is 4 days";Time between transplant and follow-up event in days;yes
